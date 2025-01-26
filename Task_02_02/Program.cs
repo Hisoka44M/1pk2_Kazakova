@@ -2,32 +2,20 @@
 {
     internal class Program
     {
+        // Найти значение выражения при a = 8, b = 14, с = π/4
         static void Main(string[] args)
         {
-            Console.WriteLine("Введите a:");
-            double a = Convert.ToDouble(Console.ReadLine());
+            double a = 8;
+            double b = 14;
+            double c = Math.PI / 4;
 
-            Console.WriteLine("Введите b:");
-            double b = Convert.ToDouble(Console.ReadLine());
+            double numerator = Math.Pow(b, 1.0 / 4) + Math.Pow(a - 1, 1.0 / 3); 
+            double denominator = Math.Abs(a - b) * (Math.Pow(Math.Sin(c), 2) + Math.Tan(c)); 
 
-            Console.WriteLine("Введите c (в радианах):");
-            double c = Convert.ToDouble(Console.ReadLine());
+            double result = numerator / denominator;
 
-            double numerator = Math.Pow(b, 0.25) + Math.Pow(a - 1, 1.0 / 3.0);
+            Console.WriteLine($"Результат: {result}");
 
-            double sin2 = Math.Sin(c) * Math.Sin(c);
-            double tanC = Math.Tan(c);
-            double denominator = Math.Abs(a - b) * (sin2 + tanC);
-
-            if (denominator == 0)
-            {
-                Console.WriteLine("Ошибка: деление на ноль.");
-            }
-            else
-            {
-                double result = numerator / denominator;
-                Console.WriteLine("Результат: " + result);
-            }
         }
     }
 }
