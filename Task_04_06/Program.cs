@@ -21,10 +21,9 @@
 
                 do
                 {
-                    newNumber = rnd.Next(-50, 50); // Генерация случайного числа
+                    newNumber = rnd.Next(-50, 50);
                     isUnique = true;
 
-                    // Проверка на уникальность по модулю
                     for (int j = 0; j < i; j++)
                     {
                         if (Math.Abs(newNumber) == Math.Abs(numbers[j]))
@@ -39,14 +38,12 @@
                 numbers[i] = newNumber;
             }
 
-            // Вывод сгенерированного массива
             Console.WriteLine("Сгенерированный массив:");
             foreach (int num in numbers)
             {
                 Console.Write(num + " ");
             }
 
-            // Поиск наибольшего по модулю числа
             int maxAbsValue = numbers[0];
             foreach (int num in numbers)
             {
