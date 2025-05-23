@@ -1,0 +1,40 @@
+﻿<Window x:Class="Task_39_02.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Task_39_02"
+        mc:Ignorable="d"
+        Title="Список покупок" Height="400" Width="500"
+        Background="#EEE6FA">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Группа ввода -->
+        <GroupBox Header="Добавить продукт" FontWeight="Bold" Foreground="#4B0082"
+                  Grid.Row="0" Padding="10" Margin="0 0 0 10">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                <TextBox x:Name="productTextBox" Width="280" Margin="0 0 10 0" Background="#F3E5F5"/>
+                <Button Content="Добавить" Width="100" Click="AddProduct_Click"
+                        Background="#D1C4E9" Foreground="Black"/>
+            </StackPanel>
+        </GroupBox>
+
+        <!-- Кнопка сохранения -->
+        <StackPanel Orientation="Horizontal" Grid.Row="1" Margin="0 0 0 10">
+            <Button Content="Сохранить список" Width="150" HorizontalAlignment="Left"
+                    Click="SaveList_Click" Background="#B39DDB" Foreground="White"/>
+        </StackPanel>
+
+        <!-- Список покупок -->
+        <GroupBox Header="Список покупок" FontWeight="Bold" Foreground="#4B0082"
+                  Grid.Row="2" Padding="10">
+            <ListBox x:Name="productsListBox" Background="#F8EAF6" BorderBrush="#CE93D8"
+                     BorderThickness="1" />
+        </GroupBox>
+    </Grid>
+</Window>
